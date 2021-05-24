@@ -29,7 +29,6 @@ Heroku deployment URL: https://tranquil-shore-83471.herokuapp.com
 
 Git repository: https://github.com/s3840619/RAD-2021
 
-
 Last heroku deployment log: 
 
 -----> Building on the Heroku-20 stack

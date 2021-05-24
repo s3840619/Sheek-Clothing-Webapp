@@ -6,17 +6,27 @@ Aaron Fisher s3840619 contrubution: 100
 Highest attempted level: CR
 
 Time sheet for each team member:
+
 Aaron Fisher: 
+
 logged 6 hours 17/5/21
+
 logged 4 hours 18/5/21
+
 logged 6 hours 19/5/21
+
 logged 8 hours 20/5/21
+
 logged 4 hours 21/5/21
+
 logged 2 hours 22/5/21
+
 logged 6 hours 23/5/21
+
 logged 3 hours 24/5/21
 
 Heroku deployment URL: https://tranquil-shore-83471.herokuapp.com
+
 Git repository: https://github.com/s3840619/RAD-2021
 
 

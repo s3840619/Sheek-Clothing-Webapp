@@ -17,7 +17,7 @@
     <div align = "right" class="container">
       <p class="f3 fw6 pt1 price">Currently featuring for just <%= number_to_currency(@products[0].price) %></p>
       <p class="f3 fw6 pt1 price"><%= @products[0].title %></p>
-      <%= link_to 'View this product', edit_product_path(@products[0]), class: "button" %>
+       <%= button_to 'Add to cart', line_items_path(product_id: @products[0]), class: 'button is-warning add-to-cart' %>
     </div>
     <div class="feature-image">
       <%= image_tag(@products[0].image_url(:default)) %>

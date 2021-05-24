@@ -31,6 +31,7 @@ Git repository: https://github.com/s3840619/RAD-2021
 
 
 Last heroku deployment log: 
+
 -----> Building on the Heroku-20 stack
 -----> Using buildpack: heroku/ruby
 -----> Ruby app detected

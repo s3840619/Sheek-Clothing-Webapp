@@ -1,0 +1,46 @@
+<div class="columns">
+  <div class="column is-8 is-centered">
+    <%= simple_form_for @question, html: { multipart: true } do |f| %>
+      <%= f.error_notification %>
+        <div class="columns">
+
+          <div class="field column is-9">
+              <p>
+                <b>Select your answer here</b><br />
+                <% if @question.answer_a? %>
+                <%= f.radio_button :selected_answer, 'answer_a' %> <%=@question.answer_a%><br />
+                <% end %>
+                <% if @question.answer_b? %>
+                <%= f.radio_button :selected_answer, 'answer_b' %> <%=@question.answer_b%><br />
+                <% end %>
+                <% if @question.answer_c? %>
+                <%= f.radio_button :selected_answer, 'answer_c' %> <%=@question.answer_c%><br />
+                <% end %>
+                <% if @question.answer_d? %>
+                <%= f.radio_button :selected_answer, 'answer_d' %> <%=@question.answer_d%><br />
+                <% end %>
+                <% if @question.answer_e? %>
+                <%= f.radio_button :selected_answer, 'answer_e' %> <%=@question.answer_e%><br />
+                <% end %>
+                <% if @question.answer_f? %>
+                <%= f.radio_button :selected_answer, 'answer_f' %> <%=@question.answer_f%><br />
+                <% end %>
+                
+            </p>
+          </div>
+           
+        </div>
+
+          <output id="list"></output>
+        <hr />
+
+        <div class="field is-grouped">
+          <div class="control">
+            <%= f.button :submit, "Submit your answer", class: 'button is-warning' %>
+            <%= link_to 'Cancel', questions_path, class:'button is-light' %>
+          </div>
+        </div>
+
+      <% end %>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="product-index-grid pt4">
+  <% @questions.each do |question| %>
+
+    <div class="product border-light">
+
+    <div class="pa3">
+
+      <h3 class="fw7 f4 title"><%=question.prompt %></h3>
+
+      <% if question.category? %>
+        <div class="condition">
+          <span class="tag is-dark"><%= question.category %></span>
+        </div>
+      <% end %>
+
+      <p class="has-text-gray fg pt1">Difficulty: <%= question.difficulty %></p>
+
+      <p class="f3 fw6 has-text-right pt2 price"><%= link_to 'Attempt this question', edit_question_path(question), class: "button is-small" %></p>
+
+    </div>
+  </div>
+  <% end %>
+</div>

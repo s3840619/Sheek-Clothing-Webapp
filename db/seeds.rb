@@ -6,10 +6,31 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+
+
+data = ActiveSupport::JSON.decode(File.read("quiz.json"))
+data.each do |data|
+  Question.create!(
+    questionID: data["id"],
+    prompt: data["question"],
+    answer_a: data["answers"]["answer_a"],
+    answer_b: data["answers"]["answer_b"],
+    answer_c: data["answers"]["answer_c"],
+    answer_d: data["answers"]["answer_d"],
+    answer_e: data["answers"]["answer_e"],
+    answer_f: data["answers"]["answer_f"],
+    correct_answer: data["correct_answer"],
+    category: data["category"],
+    difficulty: data["difficulty"]
+  )
+end
+
+
 user = User.new(
-  id: 2,
+  id: 3,
   name: "RAD",
-  email: "rad2021rmit@gmail.com",
+  email: "rad2022rmit@gmail.com",
   password: "Rails2021",
   password_confirmation: "Rails2021"
 )
@@ -23,7 +44,6 @@ Product.create!([{
   condition: "New",
   category: "men",
   price: "59.99",
-  image: Rails.root.join("app/assets/images/menShirt1.jpg").open,
   user_id: user.id
 },
 {
@@ -34,7 +54,6 @@ Product.create!([{
   condition: "New",
   category: "men",
   price: "109.99",
-  image: Rails.root.join("app/assets/images/menShirt2.jpg").open,
   user_id: user.id
 },
 {
@@ -45,7 +64,6 @@ Product.create!([{
   condition: "New",
   category: "men",
   price: "99.95",
-  image: Rails.root.join("app/assets/images/menShirt3.jpg").open,
   user_id: user.id
 },
 {
@@ -56,7 +74,6 @@ Product.create!([{
   condition: "New",
   category: "women",
   price: "109.95",
-  image: Rails.root.join("app/assets/images/womenShirt1.jpg").open,
   user_id: user.id
 },
 {
@@ -67,7 +84,6 @@ Product.create!([{
   condition: "New",
   category: "women",
   price: "89.95",
-  image: Rails.root.join("app/assets/images/womenShirt2.jpg").open,
   user_id: user.id
 },
 {
@@ -78,7 +94,6 @@ Product.create!([{
   condition: "New",
   category: "women",
   price: "89.95",
-  image: Rails.root.join("app/assets/images/womenShirt3.jpg").open,
   user_id: user.id
 },
 {
@@ -89,7 +104,6 @@ Product.create!([{
   condition: "New",
   category: "kids",
   price: "34.95",
-  image: Rails.root.join("app/assets/images/kidsShirt1.jpg").open,
   user_id: user.id
 },
 {
@@ -100,7 +114,6 @@ Product.create!([{
   condition: "New",
   category: "kids",
   price: "34.95",
-  image: Rails.root.join("app/assets/images/kidsShirt2.jpg").open,
   user_id: user.id
 },
 {
@@ -111,6 +124,5 @@ Product.create!([{
   condition: "New",
   category: "kids",
   price: "59.95",
-  image: Rails.root.join("app/assets/images/kidsShirt3.jpg").open,
   user_id: user.id
 }])

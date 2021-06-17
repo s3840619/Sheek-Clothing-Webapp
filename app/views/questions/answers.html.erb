@@ -1,0 +1,28 @@
+<% content_for :header do %>
+  <section class="hero is-warning">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Find your answers here
+        </h1>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<% @questions.each do |question| %>
+<% if question.selected_answer? %>
+        <% @attempts = @attempts + 1 %>
+        <% if question.selected_answer == question.correct_answer %>
+          <% @correctAnswers = @correctAnswers + 1 %>
+          
+        <% end %>
+
+<% end %>
+<% end %>
+
+        <h1 class="title">
+          You attempted <%= @attempts %> question(s) and got <%= @correctAnswers %> correct
+        </h1>
+        
+<p class="f3 fw6 has-text-left pt2 price"><%= link_to 'Try again', new_question_path, class: "button is-warning" %></p>
